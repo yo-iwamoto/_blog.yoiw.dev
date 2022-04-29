@@ -7,6 +7,19 @@
   },
   "eslint.validate": ["typescript", "typescriptreact"],
   "files.exclude": {
-    "**/__snapshots__": true
+    "**/__snapshots__": true,
+    ".eslintignore": true,
+    ".dockerignore": true,
+    ".prettierignore": true,
+    ".prettierrc": true,
+    ".lintstagedrc.js": true,
+    ".next": true,
+    ".husky": true,
+    "jest.config.js": true,
+    "jest.setup.js": true,
+    "cypress.json": true,
+    "aspida.config.js": true,
+    "next-env.d.ts": true,
+    "postcss.config.js": true
   }
 }
