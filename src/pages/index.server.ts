@@ -10,9 +10,6 @@ export const getStaticProps = async () => {
   } catch (err) {
     debugErrorLog(err);
 
-    return errorPageProps({
-      code: 'internal',
-      message: 'データの取得に失敗しました',
-    });
+    return errorPageProps({ code: 'internal' });
   }
 };

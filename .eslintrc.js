@@ -20,10 +20,15 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-filename-extension': 'off',
+    'react/destructuring-assignment': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/function-component-definition': 'off',
     'import/no-extraneous-dependencies': 'off', // for the conflict with jest
     camelcase: 'off',
+    'react/require-default-props': 'off',
+    'no-underscore-dangle': 'off',
+    '@next/next/link-passhref': 'off',
+    'jsx-a11y/anchor-is-valid': 'off', // use NextLink's passHref
 
     // custom
     'import/order': [

@@ -15,7 +15,6 @@ export const errorCodes = ['internal', 'unauthorized', 'invalid-request', 'not-f
 export const errorPageProps = <
   T extends {
     code: typeof errorCodes[number];
-    message: string;
     [x: string]: string;
   }
 >(
