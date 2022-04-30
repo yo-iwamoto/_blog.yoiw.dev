@@ -19,6 +19,9 @@ export const useHooks = () => {
   const onSubmit = useCallback(
     (e: FormEvent) => {
       e.preventDefault();
+
+      setKeyword('');
+      setIsSearchBoxOpen(false);
       router.push(pagesPath.search.$url({ query: { q: keyword } }));
     },
     [keyword, router]
