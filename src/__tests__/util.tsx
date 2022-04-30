@@ -1,4 +1,4 @@
-import { Layout } from '@/components/Layout';
+import { Layout } from '@/components/layout/Layout';
 import { render } from '@testing-library/react';
 import type { RenderOptions } from '@testing-library/react';
 import type { ReactNode } from 'react';

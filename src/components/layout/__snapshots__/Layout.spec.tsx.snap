@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`[page] / renders / unchanged 1`] = `
+exports[`[component] Layout renders Layout unchanged 1`] = `
 <div>
   <div
     class="font-sans text-slate-800"
@@ -50,28 +50,9 @@ exports[`[page] / renders / unchanged 1`] = `
         <div
           class="mt-4"
         >
-          <div
-            class="flex flex-col gap-4"
-          >
-            <a
-              href="/entries/slug"
-            >
-              <div
-                class="cursor-pointer rounded-lg bg-slate-50 p-4 shadow-md transition-all hover:opacity-80 hover:shadow-lg"
-              >
-                <h1
-                  class="text-2xl font-bold"
-                >
-                  title
-                </h1>
-                <p
-                  class="text-slate-500"
-                >
-                  yyyy/mm/dd
-                </p>
-              </div>
-            </a>
-          </div>
+          <h1>
+            Hello World!
+          </h1>
         </div>
       </div>
     </div>
