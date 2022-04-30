@@ -25,7 +25,7 @@ export const getStaticProps = async ({ params }: GetStaticPropsContext<PathParam
 
     const page = await getPage(params.slug);
 
-    return okPageProps({ page });
+    return okPageProps(page);
   } catch (err) {
     debugErrorLog(err);
 

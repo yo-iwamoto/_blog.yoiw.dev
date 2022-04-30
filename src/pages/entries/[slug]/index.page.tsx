@@ -1,5 +1,6 @@
 import { getStaticProps, getStaticPaths } from './index.server';
 import { PageContainer } from '@/components/layout/PageContainer';
+import { NotionBlock } from '@/components/NotionBlock';
 import type { InferGetStaticPropsType } from 'next';
 
 export { getStaticProps, getStaticPaths };
@@ -14,12 +15,15 @@ export default function Page(props: { [x: string]: never } | InferGetStaticProps
     return <h1>エラーが発生しました</h1>;
   }
 
-  const { properties } = data.page;
+  const { blocks, properties } = data;
   return (
     <PageContainer>
-      <div className='mt-12'>
+      <div className='mt-6'>
         <h1 className='mb-2 text-xl font-bold sm:text-2xl md:text-3xl'>{properties.title}</h1>
-        <p className='text-slate-500'>{properties.created_at}</p>
+        <p className='mb-2 text-slate-500'>{properties.created_at}</p>
+        {blocks.map((block) => (
+          <NotionBlock key={block.id} {...block} />
+        ))}
       </div>
     </PageContainer>
   );
