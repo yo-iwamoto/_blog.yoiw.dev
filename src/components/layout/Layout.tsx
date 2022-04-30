@@ -32,7 +32,13 @@ export const Layout: FC<Props> = ({ children }) => {
                   'opacity-100': isSearchBoxOpen,
                 })}
               />
-              <FaSearch onClick={!isSearchBoxOpen ? openSearchBox : undefined} className='cursor-pointer text-xl' />
+              {isSearchBoxOpen ? (
+                <button type='submit'>
+                  <FaSearch className='cursor-pointer text-xl' />
+                </button>
+              ) : (
+                <FaSearch onClick={openSearchBox} className='cursor-pointer text-xl' />
+              )}
             </form>
           </header>
           <div className='mt-4'>{children}</div>
