@@ -9,10 +9,14 @@ build-dev-no-cache: # build dev container with no cache
 
 .PHONY: install-deps-dev
 install-deps-dev: # update dependencies on running container
-	docker-compose -f docker/dev/docker-compose.yml exec web yarn --frozen-lockfile
+	docker-compose -f docker/dev/docker-compose.yml -v package.json:app/package.json -v yarn.lock:app/yarn.lock exec web yarn --frozen-lockfile
 
 .PHONY: up-dev
-up-dev: # start dev container in detached mode
+up-dev: # up dev container in detached mode
+	docker-compose -f docker/dev/docker-compose.yml up -d
+
+.PHONY: restart-dev
+restart-dev: # restart dev container in detached mode
 	docker-compose -f docker/dev/docker-compose.yml up -d
 
 .PHONY: down-dev
@@ -30,10 +34,14 @@ build-no-cache: # build container with no cache
 
 .PHONY: install-deps
 install-deps: # update dependencies on running container
-	docker-compose -f docker/production/docker-compose.yml exec web yarn --frozen-lockfile
+	docker-compose -f docker/production/docker-compose.yml -v package.json:app/package.json -v yarn.lock:app/yarn.lock exec web yarn --frozen-lockfile
 
 .PHONY: up
 up: # start container in detached mode
+	docker-compose -f docker/production/docker-compose.yml up -d
+
+.PHONY: restart
+restart: # restart container in detached mode
 	docker-compose -f docker/production/docker-compose.yml up -d
 
 .PHONY: down
