@@ -19,6 +19,9 @@ export const useHooks = () => {
   const onSubmit = useCallback(
     (e: FormEvent) => {
       e.preventDefault();
+      if (keyword === '') {
+        return;
+      }
 
       setKeyword('');
       setIsSearchBoxOpen(false);

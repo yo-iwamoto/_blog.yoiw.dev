@@ -27,10 +27,13 @@ export const Layout: FC<Props> = ({ children }) => {
                 type='text'
                 value={keyword}
                 onChange={onChangeKeyword}
-                className={cn('border-b-2 border-b-slate-500 py-1 px-2 transition-opacity focus:outline-blue-300', {
-                  'opacity-0': !isSearchBoxOpen,
-                  'opacity-100': isSearchBoxOpen,
-                })}
+                className={cn(
+                  'w-auto max-w-[128px] border-b-2 border-b-slate-500 py-1 px-2 transition-opacity focus:outline-blue-300 sm:w-56 sm:max-w-none md:w-80',
+                  {
+                    'opacity-0': !isSearchBoxOpen,
+                    'opacity-100': isSearchBoxOpen,
+                  }
+                )}
               />
               {isSearchBoxOpen ? (
                 <button type='submit'>

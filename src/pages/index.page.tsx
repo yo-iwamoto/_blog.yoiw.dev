@@ -23,8 +23,8 @@ export default function Page({ status, data }: InferGetStaticPropsType<typeof ge
           <Link key={id} href={pagesPath.entries._slug(properties.slug).$url()} passHref>
             <a>
               <div className='cursor-pointer rounded-lg bg-slate-50 p-4 shadow-md transition-all hover:opacity-80 hover:shadow-lg'>
-                <h1 className='text-2xl font-bold'>{properties.title}</h1>
-                <p className='text-slate-500'>{properties.created_at}</p>
+                <h1 className='text-lg font-bold sm:text-xl md:text-2xl'>{properties.title}</h1>
+                <p className='text-sm text-slate-500 md:text-lg'>{properties.created_at}</p>
               </div>
             </a>
           </Link>
