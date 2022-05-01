@@ -1,6 +1,6 @@
 import { pagesPath } from '@/lib/$path';
 import { useRouter } from 'next/router';
-import { useCallback, useState, ChangeEvent, FormEvent } from 'react';
+import { useCallback, useState, ChangeEvent, FormEvent, useRef } from 'react';
 
 export const useHooks = () => {
   const router = useRouter();
@@ -9,7 +9,12 @@ export const useHooks = () => {
 
   const [isSearchBoxOpen, setIsSearchBoxOpen] = useState(false);
 
-  const openSearchBox = useCallback(() => setIsSearchBoxOpen(true), [setIsSearchBoxOpen]);
+  const $searchInput = useRef<HTMLInputElement | null>(null);
+
+  const openSearchBox = useCallback(() => {
+    $searchInput.current?.focus();
+    setIsSearchBoxOpen(true);
+  }, [setIsSearchBoxOpen]);
 
   const onChangeKeyword = useCallback(
     ({ target: { value } }: ChangeEvent<HTMLInputElement>) => setKeyword(value),
@@ -36,5 +41,6 @@ export const useHooks = () => {
     keyword,
     onChangeKeyword,
     onSubmit,
+    $searchInput,
   };
 };

@@ -10,7 +10,7 @@ type Props = {
 };
 
 export const Layout: FC<Props> = ({ children }) => {
-  const { isSearchBoxOpen, openSearchBox, keyword, onChangeKeyword, onSubmit } = useHooks();
+  const { isSearchBoxOpen, openSearchBox, keyword, onChangeKeyword, onSubmit, $searchInput } = useHooks();
 
   return (
     <div className='font-sans text-slate-800'>
@@ -24,6 +24,7 @@ export const Layout: FC<Props> = ({ children }) => {
             </Link>
             <form onSubmit={onSubmit} className='flex h-12 items-center justify-end gap-4'>
               <input
+                ref={$searchInput}
                 type='text'
                 value={keyword}
                 onChange={onChangeKeyword}
