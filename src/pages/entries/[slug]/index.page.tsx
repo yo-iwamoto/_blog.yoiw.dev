@@ -1,6 +1,6 @@
 import { getStaticProps, getStaticPaths } from './index.server';
 import { PageContainer } from '@/components/layout/PageContainer';
-import { NotionBlock } from '@/components/NotionBlock';
+import { NotionBlock } from '@/components/notion/NotionBlock';
 import type { InferGetStaticPropsType } from 'next';
 
 export { getStaticProps, getStaticPaths };
