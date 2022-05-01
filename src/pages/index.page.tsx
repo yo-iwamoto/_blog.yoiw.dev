@@ -14,8 +14,8 @@ export default function Page({ status, data }: InferGetStaticPropsType<typeof ge
   return (
     <PageContainer
       seo={{
-        title: '開発中',
-        description: '開発中の個人ブログです',
+        title: 'blog.yoiw.dev',
+        description: 'github: you-5805 の個人ブログです',
       }}
     >
       <div className='flex flex-col gap-4'>

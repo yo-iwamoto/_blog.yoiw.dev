@@ -17,7 +17,11 @@ export default function Page(props: { [x: string]: never } | InferGetStaticProps
 
   const { blocks, properties } = data;
   return (
-    <PageContainer>
+    <PageContainer
+      seo={{
+        title: `${properties.title} | blog.yoiw.dev`,
+      }}
+    >
       <div className='mt-6'>
         <h1 className='mb-2 text-xl font-bold sm:text-2xl md:text-3xl'>{properties.title}</h1>
         <p className='mb-2 text-slate-500'>{properties.created_at}</p>
