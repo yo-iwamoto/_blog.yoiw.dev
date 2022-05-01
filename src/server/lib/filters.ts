@@ -1,7 +1,7 @@
 export const slugFilter = (slug: string) => ({
   property: 'slug',
   rich_text: {
-    contains: slug,
+    equals: slug,
   },
 });
 
