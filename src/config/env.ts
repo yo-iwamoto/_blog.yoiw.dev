@@ -1,3 +1,4 @@
 export const env = {
-  notionDbId: process.env.NOTION_DB_ID as string,
+  notionIntegrationToken: process.env.NOTION_INTEGRATION_TOKEN as string,
+  notionDatabaseId: process.env.NOTION_DATABASE_ID as string,
 };

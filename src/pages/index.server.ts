@@ -1,10 +1,19 @@
 import { debugErrorLog } from '@/lib/debugLog';
-import { getAllPublicPages } from '@/server/dataAccess/getAllPublicPages';
-import { errorPageProps, okPageProps } from '@/server/lib/response';
+import { notionQuery } from '@/lib/notionQuery';
+import { fetchPagesByPaging } from '@/lib/fetchPagesByPaging';
+import { statusFilter } from '@/lib/filters';
+import { errorPageProps, okPageProps } from '@/lib/response';
+import { createdTimeAscSort } from '@/lib/sorts';
+
+const publicQuery = notionQuery({
+  filter: statusFilter('public'),
+  sorts: [createdTimeAscSort],
+});
 
 export const getStaticProps = async () => {
   try {
-    const pages = await getAllPublicPages();
+    // const pages = await getAllPublicPages();
+    const pages = await fetchPagesByPaging(publicQuery);
 
     return okPageProps({ pages });
   } catch (err) {

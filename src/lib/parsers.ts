@@ -43,26 +43,3 @@ export const parseNotionPage = (page: GetPageResponse) => {
     tags: tags.multi_select,
   };
 };
-
-/**
- * cause side-effect: raise error when the properties are invlid
- */
-export const parseNotionPageSlug = (page: GetPageResponse) => {
-  if (!('properties' in page)) {
-    throw parseError;
-  }
-
-  // distruct props, these may be undefined
-  const {
-    properties: { slug },
-  } = page;
-
-  // TODO: 抽象化
-  if (slug === undefined || slug.type !== 'rich_text') {
-    throw parseError;
-  }
-
-  return {
-    slug: slug.rich_text.map((text) => text.plain_text).join(),
-  };
-};

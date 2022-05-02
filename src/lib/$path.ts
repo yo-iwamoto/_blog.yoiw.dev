@@ -1,6 +1,11 @@
 import type { Query as Query0 } from '../pages/search/index.page'
 
 export const pagesPath = {
+  categories: {
+    _name: (name: string | number) => ({
+      $url: (url?: { hash?: string }) => ({ pathname: '/categories/[name]' as const, query: { name }, hash: url?.hash })
+    })
+  },
   entries: {
     _slug: (slug: string | number) => ({
       $url: (url?: { hash?: string }) => ({ pathname: '/entries/[slug]' as const, query: { slug }, hash: url?.hash })
