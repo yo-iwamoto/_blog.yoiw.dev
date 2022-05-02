@@ -65,10 +65,19 @@ exports[`[page] / renders / unchanged 1`] = `
                   title
                 </h1>
                 <p
-                  class="text-sm text-slate-500 md:text-lg"
+                  class="mb-1 text-sm text-slate-500 md:text-lg"
                 >
                   yyyy/mm/dd
                 </p>
+                <div
+                  class="flex gap-2"
+                >
+                  <span
+                    class="text-slate-700 before:pr-0.5 before:content-[\\"#\\"]"
+                  >
+                    name
+                  </span>
+                </div>
               </div>
             </a>
           </div>
