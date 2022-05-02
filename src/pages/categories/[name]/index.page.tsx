@@ -2,7 +2,6 @@ import { getStaticPaths, getStaticProps } from './index.server';
 import { PageContainer } from '@/components/layout/PageContainer';
 import { isEmptyPageProps } from '@/lib/isEmptyPageProps';
 import { pagesPath } from '@/lib/$path';
-import { cn } from '@/lib/classNames';
 import { titleWithSiteName } from '@/lib/titleWithSiteName';
 import Link from 'next/link';
 import type { InferGetStaticPropsType } from 'next';
@@ -39,12 +38,7 @@ export default function Page(props: InferGetStaticPropsType<typeof getStaticProp
                 <p className='mb-1 text-sm text-slate-500 md:text-lg'>{properties.created_at}</p>
                 <div className='flex gap-2'>
                   {properties.tags.map((tag) => (
-                    <span
-                      key={tag.id}
-                      className={cn('text-slate-700 before:pr-0.5 before:content-["#"]', {
-                        'text-blue-600': tag.name === name,
-                      })}
-                    >
+                    <span key={tag.id} className='text-slate-700 before:pr-0.5 before:content-["#"]'>
                       {tag.name}
                     </span>
                   ))}
