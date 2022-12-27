@@ -1,13 +1,12 @@
+/** @type{import('eslint').ESLint.ConfigData} */
 module.exports = {
   env: {
     node: true,
-    jest: true,
     es6: true,
   },
   extends: [
     'next',
     'next/core-web-vitals',
-    'airbnb',
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:@typescript-eslint/recommended',
@@ -23,7 +22,6 @@ module.exports = {
     'react/destructuring-assignment': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/function-component-definition': 'off',
-    'import/no-extraneous-dependencies': 'off', // for the conflict with jest
     camelcase: 'off',
     'react/require-default-props': 'off',
     'no-underscore-dangle': 'off',
@@ -36,10 +34,22 @@ module.exports = {
       { groups: ['index', 'sibling', 'parent', 'internal', 'external', 'builtin', 'object', 'type'] },
     ],
     '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+    '@typescript-eslint/consistent-type-exports': [
+      'error',
+      {
+        fixMixedExportsWithInlineTypeSpecifier: false,
+      },
+    ],
+    '@typescript-eslint/consistent-type-imports': [
+      'error',
+      {
+        prefer: 'type-imports',
+      },
+    ],
   },
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    tsconfigRootDir: '.',
+    project: ['./tsconfig.json'],
   },
   settings: {
     react: {

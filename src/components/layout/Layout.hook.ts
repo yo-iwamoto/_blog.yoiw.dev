@@ -1,6 +1,7 @@
 import { pagesPath } from '@/lib/$path';
 import { useRouter } from 'next/router';
-import { useCallback, useState, ChangeEvent, FormEvent, useRef } from 'react';
+import { useCallback, useState, useRef } from 'react';
+import type { ChangeEvent, FormEvent } from 'react';
 
 export const useHooks = () => {
   const router = useRouter();

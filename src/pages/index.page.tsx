@@ -1,8 +1,8 @@
 import { getStaticProps } from './index.server';
 import { PageContainer } from '@/components/layout/PageContainer';
 import { pagesPath } from '@/lib/$path';
-import { InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
+import type { InferGetStaticPropsType } from 'next';
 
 export { getStaticProps };
 

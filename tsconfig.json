@@ -20,7 +20,8 @@
       "@/*": ["src/*"]
     },
     "module": "esnext",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "types": ["vitest/globals"]
   },
   "include": ["src", "next-env.d.ts"],
   "exclude": ["node_modules"]

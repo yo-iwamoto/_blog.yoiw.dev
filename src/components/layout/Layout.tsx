@@ -2,8 +2,8 @@ import { useHooks } from './Layout.hook';
 import { cn } from '@/lib/classNames';
 import { pagesPath } from '@/lib/$path';
 import { FaSearch } from 'react-icons/fa';
-import { ReactNode, FC } from 'react';
 import Link from 'next/link';
+import type { ReactNode, FC } from 'react';
 
 type Props = {
   children: ReactNode;
