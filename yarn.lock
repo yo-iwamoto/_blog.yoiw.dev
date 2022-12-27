@@ -894,13 +894,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@notionhq/client@npm:^1.0.4":
-  version: 1.0.4
-  resolution: "@notionhq/client@npm:1.0.4"
+"@notionhq/client@npm:^2.2.3":
+  version: 2.2.3
+  resolution: "@notionhq/client@npm:2.2.3"
   dependencies:
     "@types/node-fetch": ^2.5.10
     node-fetch: ^2.6.1
-  checksum: d4bdca87c31b247d88b4918001937684123705d79fb39f27b9d9da7759981493fc542f836a800a6701e26b093f739a5d0984297317c9a76a610234dae468a8f4
+  checksum: 356e889012d36bf2045099d28c65fa2e41defa849f5bf34c6b82fbc7a028ce66a17aa2bd63b2451cfecc8378a49c2d179357896d211d3d92648c425157f628fe
   languageName: node
   linkType: hard
 
@@ -4646,7 +4646,7 @@ __metadata:
   dependencies:
     "@markuplint/jsx-parser": ^3.0.0
     "@markuplint/react-spec": ^3.0.0
-    "@notionhq/client": ^1.0.4
+    "@notionhq/client": ^2.2.3
     "@testing-library/jest-dom": ^5.16.2
     "@testing-library/react": ^13.1.1
     "@types/node": ^17.0.21

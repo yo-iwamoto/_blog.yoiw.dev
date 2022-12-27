@@ -1,12 +1,11 @@
 import { NotionText } from './NotionText';
 import { cn } from '@/lib/classNames';
 import { FaGlobeAfrica } from 'react-icons/fa';
-import type { FC } from 'react';
 import type { GetBlockResponse } from '@notionhq/client/build/src/api-endpoints';
 
 type Props = GetBlockResponse;
 
-export const NotionBlock: FC<Props> = (block) => {
+export const NotionBlock = (block: Props) => {
   if (!('type' in block)) {
     return null;
   }
@@ -16,7 +15,7 @@ export const NotionBlock: FC<Props> = (block) => {
     case 'paragraph':
       return (
         <p className='py-2'>
-          <NotionText key={block.id} {...block.paragraph} />
+          <NotionText key={block.id} rich_text={block.paragraph.rich_text} />
         </p>
       );
     case 'image':
@@ -31,7 +30,7 @@ export const NotionBlock: FC<Props> = (block) => {
       return (
         <>
           <h1 className='pt-8 pb-1 text-2xl font-bold'>
-            <NotionText key={block.id} {...block.heading_1} />
+            <NotionText key={block.id} rich_text={block.heading_1.rich_text} />
           </h1>
           <hr className='pb-2' />
         </>
@@ -39,13 +38,13 @@ export const NotionBlock: FC<Props> = (block) => {
     case 'heading_2':
       return (
         <h2 className='pt-4 pb-1 text-xl font-bold'>
-          <NotionText key={block.id} {...block.heading_2} />
+          <NotionText key={block.id} rich_text={block.heading_2.rich_text} />
         </h2>
       );
     case 'heading_3':
       return (
         <h3 className='py-1 text-lg font-bold'>
-          <NotionText key={block.id} {...block.heading_3} />
+          <NotionText key={block.id} rich_text={block.heading_3.rich_text} />
         </h3>
       );
     case 'bookmark':
@@ -67,7 +66,7 @@ export const NotionBlock: FC<Props> = (block) => {
     case 'bulleted_list_item':
       return (
         <li className='list-disc py-1 pl-3'>
-          <NotionText key={block.id} {...block.bulleted_list_item} />
+          <NotionText key={block.id} rich_text={block.bulleted_list_item.rich_text} />
         </li>
       );
     case 'numbered_list_item':
@@ -75,7 +74,7 @@ export const NotionBlock: FC<Props> = (block) => {
       // same display with bulleted_list_item
       return (
         <li className='list-disc py-1 pl-3'>
-          <NotionText key={block.id} {...block.numbered_list_item} />
+          <NotionText key={block.id} rich_text={block.numbered_list_item.rich_text} />
         </li>
       );
     case 'divider':
