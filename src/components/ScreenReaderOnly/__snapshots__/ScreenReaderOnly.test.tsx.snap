@@ -1,0 +1,11 @@
+// Vitest Snapshot v1
+
+exports[`ScreenReaderOnly > 正しく表示されること 1`] = `
+<DocumentFragment>
+  <span
+    class="sr-only"
+  >
+    help text
+  </span>
+</DocumentFragment>
+`;

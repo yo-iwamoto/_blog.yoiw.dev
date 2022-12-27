@@ -1,6 +1,7 @@
 import { NotionText } from './NotionText';
 import { cn } from '@/lib/classNames';
 import { FaGlobeAfrica } from 'react-icons/fa';
+import Image from 'next/image';
 import type { GetBlockResponse } from '@notionhq/client/build/src/api-endpoints';
 
 type Props = GetBlockResponse;
@@ -20,11 +21,15 @@ export const NotionBlock = (block: Props) => {
       );
     case 'image':
       return (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img
-          src={block.image.type === 'file' ? block.image.file.url : undefined}
-          alt={block.image.caption[0]?.plain_text ?? ''}
-        />
+        <div className='relative h-72 w-full'>
+          <Image
+            decoding='async'
+            layout='fill'
+            objectFit='contain'
+            src={block.image.type === 'file' ? block.image.file.url : block.image.external.url}
+            alt={block.image.caption[0]?.plain_text ?? ''}
+          />
+        </div>
       );
     case 'heading_1':
       return (

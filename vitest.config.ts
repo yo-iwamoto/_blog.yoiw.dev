@@ -9,5 +9,6 @@ export default defineConfig({
     alias: {
       '@/': './src/',
     },
+    setupFiles: ['./src/__tests__/setup.ts'],
   },
 });

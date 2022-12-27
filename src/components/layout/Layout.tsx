@@ -1,4 +1,5 @@
 import { useHooks } from './Layout.hook';
+import { ScreenReaderOnly } from '../ScreenReaderOnly';
 import { cn } from '@/lib/classNames';
 import { pagesPath } from '@/lib/$path';
 import { FaSearch } from 'react-icons/fa';
@@ -38,6 +39,7 @@ export const Layout = ({ children }: Props) => {
               />
               {isSearchBoxOpen ? (
                 <button type='submit'>
+                  <ScreenReaderOnly>検索</ScreenReaderOnly>
                   <FaSearch className='cursor-pointer text-xl' />
                 </button>
               ) : (
