@@ -12,9 +12,7 @@
     "prepare": "husky install",
     "aspida:build": "aspida",
     "jest": "jest",
-    "jest:watch": "jest --watch",
-    "cy:open": "cypress open",
-    "cy:run": "cypress run"
+    "jest:watch": "jest --watch"
   },
   "dependencies": {
     "@notionhq/client": "^1.0.4",
@@ -26,7 +24,6 @@
     "react-icons": "^4.3.1"
   },
   "devDependencies": {
-    "@testing-library/cypress": "^8.0.2",
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^13.1.1",
     "@types/node": "^17.0.21",
@@ -35,7 +32,6 @@
     "@typescript-eslint/eslint-plugin": "^5.14.0",
     "@typescript-eslint/parser": "^5.14.0",
     "autoprefixer": "^10.4.2",
-    "cypress": "^9.5.1",
     "eslint": "^8.11.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-next": "^12.1.0",
