@@ -26,7 +26,7 @@ export const Layout = ({ children }: Props) => {
             <form onSubmit={onSubmit} className='flex h-12 items-center justify-end gap-4'>
               <input
                 ref={$searchInput}
-                type='text'
+                type='search'
                 value={keyword}
                 onChange={onChangeKeyword}
                 className={cn(
