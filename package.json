@@ -2,7 +2,7 @@
   "name": "my-next-template",
   "license": "MIT",
   "scripts": {
-    "dev": "run-p dev:*",
+    "dev": "run-p dev:'*'",
     "dev:next": "next dev",
     "dev:path": "pathpida --enableStatic --watch",
     "build": "pathpida --enableStatic && next build",
@@ -12,10 +12,11 @@
     "aspida:build": "aspida",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "lint:markup": "markuplint src/**/*.tsx"
+    "lint:markup": "markuplint src/**/*.tsx",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@notionhq/client": "^1.0.4",
+    "@notionhq/client": "^2.2.3",
     "dayjs": "^1.11.1",
     "next": "12.1.5",
     "next-seo": "^5.4.0",
