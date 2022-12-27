@@ -2,6 +2,7 @@ import { NotionText } from './NotionText';
 import { cn } from '@/lib/classNames';
 import { FaGlobeAfrica } from 'react-icons/fa';
 import Image from 'next/image';
+import type { TRichTextSchema } from '@/lib/schema';
 import type { GetBlockResponse } from '@notionhq/client/build/src/api-endpoints';
 
 type Props = GetBlockResponse;
@@ -16,7 +17,7 @@ export const NotionBlock = (block: Props) => {
     case 'paragraph':
       return (
         <p className='py-2'>
-          <NotionText key={block.id} rich_text={block.paragraph.rich_text} />
+          <NotionText key={block.id} text={block.paragraph.rich_text as TRichTextSchema[]} />
         </p>
       );
     case 'image':
@@ -35,7 +36,7 @@ export const NotionBlock = (block: Props) => {
       return (
         <>
           <h1 className='pt-8 pb-1 text-2xl font-bold'>
-            <NotionText key={block.id} rich_text={block.heading_1.rich_text} />
+            <NotionText key={block.id} text={block.heading_1.rich_text as TRichTextSchema[]} />
           </h1>
           <hr className='pb-2' />
         </>
@@ -43,13 +44,13 @@ export const NotionBlock = (block: Props) => {
     case 'heading_2':
       return (
         <h2 className='pt-4 pb-1 text-xl font-bold'>
-          <NotionText key={block.id} rich_text={block.heading_2.rich_text} />
+          <NotionText key={block.id} text={block.heading_2.rich_text as TRichTextSchema[]} />
         </h2>
       );
     case 'heading_3':
       return (
         <h3 className='py-1 text-lg font-bold'>
-          <NotionText key={block.id} rich_text={block.heading_3.rich_text} />
+          <NotionText key={block.id} text={block.heading_3.rich_text as TRichTextSchema[]} />
         </h3>
       );
     case 'bookmark':
@@ -71,7 +72,7 @@ export const NotionBlock = (block: Props) => {
     case 'bulleted_list_item':
       return (
         <li className='list-disc py-1 pl-3'>
-          <NotionText key={block.id} rich_text={block.bulleted_list_item.rich_text} />
+          <NotionText key={block.id} text={block.bulleted_list_item.rich_text as TRichTextSchema[]} />
         </li>
       );
     case 'numbered_list_item':
@@ -79,7 +80,7 @@ export const NotionBlock = (block: Props) => {
       // same display with bulleted_list_item
       return (
         <li className='list-disc py-1 pl-3'>
-          <NotionText key={block.id} rich_text={block.numbered_list_item.rich_text} />
+          <NotionText key={block.id} text={block.numbered_list_item.rich_text as TRichTextSchema[]} />
         </li>
       );
     case 'divider':

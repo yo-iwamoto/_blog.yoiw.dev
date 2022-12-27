@@ -1,50 +1,20 @@
 import { random } from '@/lib/random';
+import type { TRichTextSchema } from '@/lib/schema';
 
 type Props = {
-  rich_text: {
-    plain_text: string;
-    href: string | null;
-    type: 'equation' | 'text' | 'mention';
-    annotations: {
-      bold: boolean;
-      italic: boolean;
-      strikethrough: boolean;
-      underline: boolean;
-      code: boolean;
-      color:
-        | 'default'
-        | 'gray'
-        | 'brown'
-        | 'orange'
-        | 'yellow'
-        | 'green'
-        | 'blue'
-        | 'purple'
-        | 'pink'
-        | 'red'
-        | 'gray_background'
-        | 'brown_background'
-        | 'orange_background'
-        | 'yellow_background'
-        | 'green_background'
-        | 'blue_background'
-        | 'purple_background'
-        | 'pink_background'
-        | 'red_background';
-    };
-  }[];
+  text: TRichTextSchema[];
 };
 
-export const NotionText = ({ rich_text }: Props) => {
+export const NotionText = ({ text }: Props) => {
   return (
     <>
-      {rich_text.map(({ plain_text, href, annotations }) => {
-        if (href !== null) {
+      {text.map(({ plain_text, text, annotations }) => {
+        if (text.link !== null) {
           return (
             <a
               className='text-blue-600 underline hover:text-blue-500'
               key={random()}
-              href={href}
+              href='#'
               target='_blank'
               rel='noreferrer'
             >
