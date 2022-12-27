@@ -1,0 +1,9 @@
+// Vitest Snapshot v1
+
+exports[`classNames > 正しい文字列になること 1`] = `"a"`;
+
+exports[`classNames > 正しい文字列になること 2`] = `"a b c"`;
+
+exports[`classNames > 正しい文字列になること 3`] = `"included"`;
+
+exports[`classNames > 正しい文字列になること 4`] = `"a included b"`;
