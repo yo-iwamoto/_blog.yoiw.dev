@@ -3,13 +3,13 @@ import { cn } from '@/lib/classNames';
 import { pagesPath } from '@/lib/$path';
 import { FaSearch } from 'react-icons/fa';
 import Link from 'next/link';
-import type { ReactNode, FC } from 'react';
+import type { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
 };
 
-export const Layout: FC<Props> = ({ children }) => {
+export const Layout = ({ children }: Props) => {
   const { isSearchBoxOpen, openSearchBox, keyword, onChangeKeyword, onSubmit, $searchInput } = useHooks();
 
   return (
